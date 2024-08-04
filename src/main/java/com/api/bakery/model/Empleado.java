@@ -15,29 +15,29 @@ public class Empleado {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idEmpleado;
+    private long id;
 
-    @Column(name = "nombre")
+    @Column(name = "NOMBRE")
     private String nombre;
 
-    @Column(name = "telefono")
+    @Column(name = "TELEFONO")
     private String telefono;
 
-    @Column(name = "fechaInicio")
+    @Column(name = "FECHA_INICIO")
     private LocalDate fechaInicio;
 
     public Empleado() {
     }
 
     public Empleado(long idEmpleado, String nombre, String telefono, LocalDate fechaInicio) {
-        this.idEmpleado = idEmpleado;
+        this.id = idEmpleado;
         this.nombre = nombre;
         this.telefono = telefono;
         this.fechaInicio = fechaInicio;
     }
 
     public long getIdEmpleado() {
-        return idEmpleado;
+        return id;
     }
 
     public String getNombre() {
@@ -53,7 +53,7 @@ public class Empleado {
     }
 
     public void setIdEmpleado(long idEmpleado) {
-        this.idEmpleado = idEmpleado;
+        this.id = idEmpleado;
     }
 
     public void setNombre(String nombre) {
