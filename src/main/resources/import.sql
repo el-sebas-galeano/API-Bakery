@@ -1,0 +1,10 @@
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Ana Maria', '3176543210', '2024-02-15T00:10:43.673100');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Carlos Eduardo', '3198765432', '2024-05-12T00:10:43.673127');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Sofia Martinez', '3101234567', '2024-05-27T00:10:43.673133');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Pedro Luis', '3144691585', '2024-02-21T00:10:43.673138');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Luisa Fernanda', '3198765432', '2024-07-27T00:10:43.673146');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Andres Felipe', '3187654321', '2023-08-17T00:10:43.673152');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Laura Valentina', '3198765432', '2023-08-05T00:10:43.673160');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Miguel Angel', '3156789012', '2023-12-09T00:10:43.673171');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Diana Carolina', '3187654321', '2024-05-10T00:10:43.673186');
+INSERT INTO empleado (nombre, telefono, fecha_inicio) VALUES ('Jose Manuel', '3101234567', '2024-07-09T00:10:43.673193');
