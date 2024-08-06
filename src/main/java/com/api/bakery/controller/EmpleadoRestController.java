@@ -18,7 +18,7 @@ import com.api.bakery.service.EmpleadoService;
 
 
 @RestController
-@RequestMapping(value = "/employee")
+@RequestMapping(value = "/empleado")
 public class EmpleadoRestController {
     
     @Autowired

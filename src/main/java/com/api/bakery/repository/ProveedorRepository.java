@@ -3,9 +3,8 @@ package com.api.bakery.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.api.bakery.model.Empleado;
+import com.api.bakery.model.Proveedor;
 
 @Repository
-public interface EmpleadoRepository extends JpaRepository<Empleado, Long>{
-    
+public interface ProveedorRepository extends JpaRepository<Proveedor, Long>{   
 }

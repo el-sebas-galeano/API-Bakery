@@ -28,18 +28,18 @@ public class Proveedor {
     }
 
     public Proveedor(Long idProveedor, String nombre, String empresa, String fechaInicio) {
-        this.idProveedor = idProveedor;
+        this.id = idProveedor;
         this.nombre = nombre;
         this.empresa = empresa;
         this.fechaInicio = fechaInicio;
     }
 
     public Long getIdProveedor() {
-        return idProveedor;
+        return id;
     }
 
     public void setIdProveedor(Long idProveedor) {
-        this.idProveedor = idProveedor;
+        this.id = idProveedor;
     }
 
     public String getNombre() {

@@ -2,6 +2,9 @@ package com.api.bakery.model;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,6 +15,13 @@ import jakarta.persistence.InheritanceType;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@JsonTypeInfo(
+  use = JsonTypeInfo.Id.NAME,
+  include = JsonTypeInfo.As.PROPERTY,
+  property = "type")
+@JsonSubTypes({
+  @JsonSubTypes.Type(value = GastoInsumos.class, name = "gastoInsumos")
+})
 public abstract class Gasto {
     
     @Id
