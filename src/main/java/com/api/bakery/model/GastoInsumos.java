@@ -2,18 +2,18 @@ package com.api.bakery.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "GASTO_INSUMOS")
 public class GastoInsumos extends Gasto{
     
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "PRODUCTO_ID", referencedColumnName = "id")
     private ProductoInsumos productoInsumos;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "PROVEEDOR_ID", referencedColumnName = "id")
     private Proveedor proveedor;
 

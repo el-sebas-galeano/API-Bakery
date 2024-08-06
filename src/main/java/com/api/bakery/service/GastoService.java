@@ -28,13 +28,16 @@ public class GastoService {
     public Gasto saveGasto(Gasto gasto){
         if(gasto instanceof GastoInsumos){
             GastoInsumos gastoInsumos = (GastoInsumos) gasto;
+
             if(gastoInsumos.getProductoInsumos().getIdProducto() == null){
                 this.productoService.saveProducto(gastoInsumos.getProductoInsumos());
             }
             if(gastoInsumos.getProveedor().getIdProveedor() == null){
                 this.proveedorService.saveProveedor(gastoInsumos.getProveedor());
             }
+            return this.gastoRepository.save(gastoInsumos);
+        } else {
+            return this.gastoRepository.save(gasto);
         }
-        return this.gastoRepository.save(gasto);
     }
 }
