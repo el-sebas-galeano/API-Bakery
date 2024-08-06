@@ -3,9 +3,9 @@ package com.api.bakery.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.api.bakery.model.Empleado;
+import com.api.bakery.model.Producto;
 
 @Repository
-public interface EmpleadoRepository extends JpaRepository<Empleado, Long>{
+public interface ProductoRepository extends JpaRepository<Producto, Long>{
     
 }
