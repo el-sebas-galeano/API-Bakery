@@ -1,6 +1,7 @@
 package com.api.bakery.service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +21,9 @@ public class ProductoService {
 
     public Producto saveProducto(Producto producto){
         return this.productoRepository.save(producto);
+    }
+
+    public Optional<Producto> getProductoById(Long id){
+        return this.productoRepository.findById(id); 
     }
 }
