@@ -30,11 +30,15 @@ public class GastoService {
             GastoInsumos gastoInsumos = (GastoInsumos) gasto;
             if(gastoInsumos.getProductoInsumos().getIdProducto() == null){
                 this.productoService.saveProducto(gastoInsumos.getProductoInsumos());
+                System.out.println(gastoInsumos.getProductoInsumos().getIdProducto());
             }
             if(gastoInsumos.getProveedor().getIdProveedor() == null){
                 this.proveedorService.saveProveedor(gastoInsumos.getProveedor());
+                System.out.println(gastoInsumos.getProveedor().getIdProveedor());
             }
+            return this.gastoRepository.save(gastoInsumos);
+        } else {
+            return null;
         }
-        return this.gastoRepository.save(gasto);
     }
 }
