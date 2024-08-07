@@ -58,4 +58,20 @@ public class GastoService {
             return null;
         }
     }
+
+    public ArrayList<Gasto> getGastosInsumos(){
+        return (ArrayList<Gasto>)this.gastoRepository.findAllInsumos();
+    }
+
+    public ArrayList<Gasto> getGastosEmpleados(){
+        return (ArrayList<Gasto>)this.gastoRepository.findAllEmpleados();
+    }
+
+    public ArrayList<Gasto> getGastosServicios(){
+        return (ArrayList<Gasto>)this.gastoRepository.findAllServicios();
+    }
+
+    public ArrayList<Gasto> getGastosOtros(){
+        return (ArrayList<Gasto>)this.gastoRepository.findAllOtros();
+    }
 }
