@@ -8,6 +8,9 @@ import jakarta.persistence.Table;
 @Table(name = "GASTO_OTROS")
 public class GastoOtros extends Gasto{
     
+    @Column(name = "TITULO")
+    private String titulo;
+
     @Column(name = "DESCRIPCION")
     private String descripcion;
 
@@ -24,6 +27,14 @@ public class GastoOtros extends Gasto{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     

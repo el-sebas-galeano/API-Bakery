@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.api.bakery.model.Gasto;
 import com.api.bakery.model.GastoEmpleados;
 import com.api.bakery.model.GastoInsumos;
+import com.api.bakery.model.GastoOtros;
 import com.api.bakery.model.GastoServicios;
 import com.api.bakery.repository.GastoRepository;
 
@@ -50,8 +51,11 @@ public class GastoService {
         } else if(gasto instanceof GastoServicios){
             GastoServicios gastoServicios = (GastoServicios) gasto;
             return this.gastoRepository.save(gastoServicios);
+        } else if(gasto instanceof GastoOtros){
+            GastoOtros gastoOtros = (GastoOtros) gasto;
+            return this.gastoRepository.save(gastoOtros);
         } else {
-            return this.gastoRepository.save(gasto);
+            return null;
         }
     }
 }
