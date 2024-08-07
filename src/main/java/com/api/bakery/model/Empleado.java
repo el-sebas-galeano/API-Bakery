@@ -15,7 +15,7 @@ public class Empleado {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "NOMBRE")
     private String nombre;
@@ -36,7 +36,7 @@ public class Empleado {
         this.fechaInicio = fechaInicio;
     }
 
-    public long getIdEmpleado() {
+    public Long getIdEmpleado() {
         return id;
     }
 
@@ -52,7 +52,7 @@ public class Empleado {
         return fechaInicio;
     }
 
-    public void setIdEmpleado(long idEmpleado) {
+    public void setIdEmpleado(Long idEmpleado) {
         this.id = idEmpleado;
     }
 
