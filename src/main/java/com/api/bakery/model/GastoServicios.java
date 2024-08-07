@@ -1,5 +1,7 @@
 package com.api.bakery.model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -11,15 +13,10 @@ public class GastoServicios extends Gasto{
     @Column(name = "SERVICIO")
     private String servicio;
 
-    @Column(name = "MES")
-    private String mes;
+    @Column(name = "FECHA_FIN")
+    private LocalDate fechaFin;
 
     public GastoServicios() {
-    }
-
-    public GastoServicios(String servicio, String mes) {
-        this.servicio = servicio;
-        this.mes = mes;
     }
 
     public String getServicio() {
@@ -30,13 +27,11 @@ public class GastoServicios extends Gasto{
         this.servicio = servicio;
     }
 
-    public String getMes() {
-        return mes;
+    public LocalDate getFechaFin() {
+        return fechaFin;
     }
 
-    public void setMes(String mes) {
-        this.mes = mes;
-    }
-
-    
+    public void setFechaFin(LocalDate fechaFin) {
+        this.fechaFin = fechaFin;
+    }    
 }
