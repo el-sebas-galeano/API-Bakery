@@ -48,7 +48,8 @@ public class GastoService {
             }
             return this.gastoRepository.save(gastoEmpleados);
         } else if(gasto instanceof GastoServicios){
-            return null;
+            GastoServicios gastoServicios = (GastoServicios) gasto;
+            return this.gastoRepository.save(gastoServicios);
         } else {
             return this.gastoRepository.save(gasto);
         }
