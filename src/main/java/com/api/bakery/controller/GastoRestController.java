@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.bakery.model.Gasto;
+
 import com.api.bakery.service.GastoService;
 
 @RestController
@@ -24,7 +25,27 @@ public class GastoRestController {
         return this.gastoService.getGastos();
     }
 
-    @PostMapping("save")
+    @GetMapping("/insumos")
+    public ArrayList<Gasto> getGastosInsumos(){
+        return this.gastoService.getGastosInsumos();
+    }
+
+    @GetMapping("/empleados")
+    public ArrayList<Gasto> getGastosEmpleados(){
+        return this.gastoService.getGastosEmpleados();
+    }
+
+    @GetMapping("/servicios")
+    public ArrayList<Gasto> gastoServicios(){
+        return this.gastoService.getGastosServicios();
+    }
+
+    @GetMapping("/otros")
+    public ArrayList<Gasto> gastoOtros(){
+        return this.gastoService.getGastosOtros();
+    }
+
+    @PostMapping("/save")
     public Gasto saveGasto(@RequestBody Gasto gasto){
         return this.gastoService.saveGasto(gasto);
     }
