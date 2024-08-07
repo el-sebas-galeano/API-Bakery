@@ -32,6 +32,7 @@ public class GastoService {
     public Gasto saveGasto(Gasto gasto){
         if(gasto instanceof GastoInsumos){
             GastoInsumos gastoInsumos = (GastoInsumos) gasto;
+
             if(gastoInsumos.getProductoInsumos().getIdProducto() == null){
                 this.productoService.saveProducto(gastoInsumos.getProductoInsumos());
             }
@@ -49,6 +50,8 @@ public class GastoService {
         else
         {
             return null;
+        } else {
+            return this.gastoRepository.save(gasto);
         }
     }
 }

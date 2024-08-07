@@ -1,6 +1,7 @@
 package com.api.bakery.service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,5 +21,9 @@ public class ProveedorService {
 
     public Proveedor saveProveedor(Proveedor proveedor){
         return this.proveedorRepository.save(proveedor);
+    }
+
+    public Optional<Proveedor> getProveedorById(Long id){
+        return this.proveedorRepository.findById(id);
     }
 }
