@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.api.bakery.model.Gasto;
+import com.api.bakery.model.GastoEmpleados;
 import com.api.bakery.model.GastoInsumos;
 import com.api.bakery.repository.GastoRepository;
 
@@ -21,6 +22,9 @@ public class GastoService {
     @Autowired
     private ProveedorService proveedorService;
 
+    @Autowired
+    private EmpleadoService empleadoService;
+
     public ArrayList<Gasto> getGastos(){
         return (ArrayList<Gasto>) this.gastoRepository.findAll();
     }
@@ -30,14 +34,20 @@ public class GastoService {
             GastoInsumos gastoInsumos = (GastoInsumos) gasto;
             if(gastoInsumos.getProductoInsumos().getIdProducto() == null){
                 this.productoService.saveProducto(gastoInsumos.getProductoInsumos());
-                System.out.println(gastoInsumos.getProductoInsumos().getIdProducto());
             }
             if(gastoInsumos.getProveedor().getIdProveedor() == null){
                 this.proveedorService.saveProveedor(gastoInsumos.getProveedor());
-                System.out.println(gastoInsumos.getProveedor().getIdProveedor());
             }
             return this.gastoRepository.save(gastoInsumos);
-        } else {
+        } else if (gasto instanceof GastoEmpleados){
+            GastoEmpleados gastoEmpleados = (GastoEmpleados) gasto;
+            if(gastoEmpleados.getEmpleado().getIdEmpleado() == null){
+                this.empleadoService.saveEmpleado(gastoEmpleados.getEmpleado());
+            }
+            return this.gastoRepository.save(gastoEmpleados);
+        }    
+        else
+        {
             return null;
         }
     }

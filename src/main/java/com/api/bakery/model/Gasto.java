@@ -20,7 +20,10 @@ import jakarta.persistence.InheritanceType;
   include = JsonTypeInfo.As.PROPERTY,
   property = "type")
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = GastoInsumos.class, name = "gastoInsumos")
+  @JsonSubTypes.Type(value = GastoInsumos.class, name = "gastoInsumos"),
+  @JsonSubTypes.Type(value = GastoEmpleados.class, name = "gastoEmpleados"),
+  @JsonSubTypes.Type(value = GastoServicios.class, name = "gastoServicios"),
+  @JsonSubTypes.Type(value = GastoOtros.class, name = "gastoOtros")
 })
 public abstract class Gasto {
     
